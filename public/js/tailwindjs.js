@@ -1,0 +1,60 @@
+tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'sky-normal': '#0d81de',
+          'dark-blue': '#10508a',
+          'light-sky-blue': '#5cc6f7',
+          'light-normal': '#1775c4',
+          'extra-light': '#507fa9',
+          'extra-sky': '#048df7',
+          'grey-light': '#a6abaf',
+          'para-light': '#5684ad',
+          'light-sky-normal': '#65d1ff',
+          'normal-dark': '#0f6de2',
+          'black-dark': '#202020',
+          'hadding-dark': '#151515',
+          'dark-color': '#1a74e3',
+          'dark-color-red': '#a00a0a',
+          'border-color': '#c8ccce',
+          'light-white': '#f3fcff',
+          'light-border': '#b4b8bc',
+          'logo-color': '#1263a0',
+          'dark-black': '#415066',
+          'extra-red-light': '#f8d8db',
+          'red-light-border': '#f5c6cb',
+          'red-normal-dark': '#7b2c42',
+          'sky-normal': '#0d81de',
+          'dark-blue': '#10508a',
+          'light-sky-blue': '#5cc6f7',
+          'light-normal': '#1775c4',
+          'extra-light': '#507fa9',
+          'extra-sky': '#048df7',
+          'grey-light': '#a6abaf',
+          'para-light': '#5684ad',
+          'light-sky-normal': '#65d1ff',
+          'normal-dark': '#0f6de2',
+          'black-dark': '#202020',
+          'hadding-dark': '#151515',
+          'dark-color': '#1a74e3',
+          'dark-color-red': '#a00a0a',
+          'border-color': '#c8ccce',
+          'light-white': '#f3fcff',
+          'light-border': '#b4b8bc',
+          'logo-color': '#1263a0',
+        },
+        fontSize: {
+          '14px': '14px',
+          '15px': '15px',
+          '1.2rem': '1.2rem',
+
+        },
+        lineHeight: {
+          'leading-11': '3rem',
+        },
+        scrollPadding: {
+        '10.5': '10px',
+        },
+      }
+    }
+  }
