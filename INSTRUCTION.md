@@ -1,18 +1,21 @@
 ###  installation :-
-            1. update 
+            1. update database credentials in .env file and docker-compose.yml file.
+            currentily using "new_ps_docker" this is as username and password of database.
 
+            2. run composer update for gerate vendor directory and download libraries.
 
-docker system prune --volumes -a
+###  Run docker :-
 
+      1. docker-compose up -d  && docker-compose build.
 
-conect to docker
-  1. docker exec -it carp_pgsql_1 bash;     
-  2. psql -U new_ps_docker
+          uses:- this will genrate docker images.
 
-carp_pgsql_1
+###  IMOPORT DATABASE :-
 
-  docker exec -i carp_pgsql_1 psql --username new_ps_docker [--password new_ps_docker] new_ps_docker < /442215records.pgsql ;
+        1. docker exec -i carp_pgsql_1 psql --username new_ps_docker [--password new_ps_docker] new_ps_docker < /442215records.pgsql ;
 
+            
 
-run file :-
-      cat test.txt | docker-compose run --rm carparts-import 
+### LOGIN TO POSTGRES DOCKER :-
+        1.  docker exec -it carp_pgsql_1 bash; 
+        2.  psql -U USERNAME
