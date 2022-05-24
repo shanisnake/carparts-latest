@@ -2,40 +2,20 @@
 
 @section('content')
 
-    <!-- header -->
-      <div class="header z-50 w-full top-0 bg-gradient-to-r from-sky-normal to-normal-dark">
-        <div class="header-item">
-          <nav id="header" class="w-full z-30 top-0 text-white">
-            <div
-              class="w-full grid grid-col-1 lg:grid-cols-1 mt-0 md:max-w-2xl lg:max-w-4xl max-w-6xl mx-auto py-2 lg:py-6"
-            >
-              <div class="block lg:flex items-center justify-center">
-                <a
-                  class="mr-12 text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                  href="#"
-                ><H1>CARPARTS</H1>
-                </a>
-              </div>
-
-
-          </nav>
-        </div>
-      </div>
-    <!-- header -->
-
     <!-- shock -->
+
     <div class="my-7 md:max-w-2xl lg:max-w-4xl max-w-6xl mx-auto">
       <div class="">
         <h2 class="block md:flex lg:flex items-center justify-center m-0 text-2xl font-bold">
-        @if ($data['details']->id)
-          {{ $data['details']->id }}
+        @if ($data['details']->name)
+          {{ $data['details']->name }}
         @endif
         </h2>
       </div>
     </div>
     <!-- shock -->
 
-    <!-- Specification -->
+    <!-- Specification section start -->
     <div class="md:max-w-2xl lg:max-w-4xl max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4" >
       <div class="border border-grey-light h-72">
 
@@ -79,51 +59,58 @@
       <div class="mt-10 lg:mt-0 lg:w-full">
         <div class="">
         <!-- table -->
-        <div class="rounded-t-md bg-gradient-to-r from-sky-normal to-normal-dark text-white">
-          <p class="py-3 px-4"> Price </p>
-        </div>
-
-        <table class="table table-condensed dark-black border border-grey-light  w-full" id="product-properties">
-          <tbody>
-            <td >
-              <h2 class="price selling mb-1 text-2xl font-bold text-dark-blue">
-              <span class="currency_symbol" itemprop="priceCurrency" content="EUR">€</span>
-              <span itemprop="price" content="103.15">
               @if($data['details']->price)
-                {{ $data['details']->price }}
+
+              <div class="rounded-t-md bg-gradient-to-r from-sky-normal to-normal-dark text-white">
+                <p class="py-3 px-4"> Price </p>
+              </div>
+
+              <table class="table table-condensed dark-black border border-grey-light  w-full" id="product-properties">
+                <tbody>
+                  <td >
+
+                      <h2 class="price selling mb-1 text-2xl font-bold text-dark-blue">
+                        <span class="currency_symbol" itemprop="priceCurrency" content="EUR">€</span>
+                        <span itemprop="price" content="103.15">
+
+                          {{ $data['details']->price }}
+
+                        </span>
+                      </h2>
+
+                  </td>
+                </tbody>
+              </table>
+
               @endif
-              </span>
-            </h2>
-          
-            </td>
-          </tbody>
-        </table>
  
 
               
         </div>
       </div>
     </div>
-    <!-- Specification -->
+    <!-- Specification section end -->
 
-    <div class="manu-toggle md:max-w-2xl lg:max-w-4xl max-w-6xl mx-auto mt-8 px-4 lg:px-0 lg:px-10 xl:px-0">
+
+    <!-- bottom tab section start -->
+    <div class="manu-toggle md:max-w-2xl lg:max-w-4xl max-w-6xl mx-auto mt-8 px-4 lg:px-0 lg:px-10 xl:px-0 mb-8">
 
       
       <div class="flex flex-wrap" id="tabs-id">
         <div class="w-full">
           <ul class="border-b-2 border-mb-0 list-none flex-wrap  grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 ">
             <li class="border-b-4 border-normal-dark -mb-px mr-11 last:mr-0 flex-auto text-center md:text-left lg:text-left">
-              <a class="md:text-sm lg:text-xs xl:text-base font-bold uppercase pt-1 pb-3 block leading-normal text-normal-dark active" onclick="changeAtiveTab(event,'tab-profile')">
+              <a style="cursor: pointer;" class="md:text-sm lg:text-xs xl:text-base font-bold uppercase pt-1 pb-3 block leading-normal text-normal-dark active" onclick="changeAtiveTab(event,'tab-profile')">
                 DIMENSIONS
               </a>
             </li>
             <li class="-mb-px md:mr-11 mr-6 last:mr-0 flex-auto text-center md:text-left lg:text-left">
-              <a class="md:text-sm lg:text-xs xl:text-15px text-base font-bold uppercase pt-1 pb-3 block leading-normal" onclick="changeAtiveTab(event,'tab-settings')">
+              <a style="cursor: pointer;" class="md:text-sm lg:text-xs xl:text-15px text-base font-bold uppercase pt-1 pb-3 block leading-normal" onclick="changeAtiveTab(event,'tab-settings')">
                  COMPATIBILITY
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center md:text-left lg:text-left">
-              <a class="md:text-sm lg:text-xs xl:text-15px text-base font-bold uppercase pt-1 pb-3 block leading-normal" onclick="changeAtiveTab(event,'tab-options')">
+              <a style="cursor: pointer;" class="md:text-sm lg:text-xs xl:text-15px text-base font-bold uppercase pt-1 pb-3 block leading-normal" onclick="changeAtiveTab(event,'tab-options')">
                 OE NUMBERS
               </a>
             </li>
@@ -218,31 +205,7 @@
       </div>
   
     </div> 
-    <!-- manu-toggle -->
-
-
-    <script type="text/javascript">
-      function changeAtiveTab(event,tabID){
-        let element = event.target;
-        while(element.nodeName !== "A"){
-          element = element.parentNode;
-        }
-        ulElement = element.parentNode.parentNode;
-        aElements = ulElement.querySelectorAll("li > a");
-        tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
-        for(let i = 0 ; i < aElements.length; i++){
-          aElements[i].classList.remove("text-white");
-          aElements[i].classList.remove("bg-pink-600"); 
-          aElements[i].classList.add("bg-white");
-          tabContents[i].classList.add("hidden");
-          tabContents[i].classList.remove("block");
-        }
-      
-        element.classList.remove("bg-white");
-        document.getElementById(tabID).classList.remove("hidden");
-        document.getElementById(tabID).classList.add("block");
-      }
-    </script>
+   <!-- bottom tab section end -->
 
 @endsection
 

@@ -18,7 +18,7 @@
 
    </header>
 
-   <div id="main" class="row">
+   <div id="main" class="row mb-5">
 
            @yield('content')
 

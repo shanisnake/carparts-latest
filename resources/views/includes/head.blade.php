@@ -17,5 +17,8 @@
  
     <!-- font-awsome --> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-     <link href="{{ asset('/css/custom.css') }}" rel="styles"> 
+     <link href="{{ asset('/css/custom.css') }}" rel="stylesheet"> 
     <!--  <link href="https://f5dd-122-173-29-141.ngrok.io/css/custom.css" rel="styles">-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

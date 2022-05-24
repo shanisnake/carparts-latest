@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ImportController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +20,22 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
-    // return 'welcome to laravel245';
 });
 
 
-
+// product details and list page path
 Route::controller(ProductController::class)->group(function () {
-    Route::get('/product/list', 'index');
+    Route::get('/product/list', 'list');
     Route::get('/product/detail/{id}', 'detail');
 });
 
 
+// Route::controller(ImportController::class)->group(function () {
+//     Route::get('/test', 'index');
+// });
 
+
+// disable all externel url
 Route::any('{query}',function() {
     return redirect('/'); })->where('query', '.*');
 
